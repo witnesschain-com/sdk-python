@@ -4,7 +4,7 @@ This module contains all APIs of wintesschain
 
 ## Transaction Tracer 
 
-download the file `witnesschain.py` and run `./install-dependencies`
+download the file `witnesschain.py` and run `./install-dependencies.sh`
 
 The documentation is in `html/witnesschain.html`
 
