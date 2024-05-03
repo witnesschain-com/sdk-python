@@ -45,8 +45,10 @@ CONTENT_TYPE_JSON = {
 
 SSL_CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 
+
 class TransactionTracer:
 #
+	"""This class is for tracing L2 transactions"""
 	def __init__(self, args):
 	#
 		self.session		= None	
@@ -68,6 +70,7 @@ class TransactionTracer:
 
 	def login (self):
 	#
+		"""This function logs in app/watchtower and returns a cookie from the coordinator"""
 		s = requests.Session()
 
 		data = json.dumps ({
@@ -122,11 +125,9 @@ class TransactionTracer:
 		self.extra_headers = {"cookie" : ";".join(["%s=%s" %(i, j) for i, j in cookies.items()]) }
 
 
-		#"""
 		r = s.post (
 			url	= USER_INFO_URL.replace("<role>",self.role),
-			verify	=
- SSL_CONTEXT.check_hostname,
+			verify	= SSL_CONTEXT.check_hostname,
 			data	= data,
 			headers = CONTENT_TYPE_JSON
 		)
@@ -151,6 +152,7 @@ class TransactionTracer:
 
 	def sign (self,message):
         #
+		"""Sign a given message as a hex"""
 		message_hash = encode_defunct(text=message)
 
 		s = Account.sign_message(message_hash, self.privateKey)
@@ -160,6 +162,7 @@ class TransactionTracer:
 
 	def sign_as_json(self,message):
         #
+		"""Sign a given message in a structured format (JSON)"""
 		message_hash = encode_defunct(text=message)
 
 		s = Account.sign_message(message_hash, self.privateKey)
@@ -175,6 +178,7 @@ class TransactionTracer:
 
 	async def logout (self,websocket):
 	#
+		"""Logs out the user"""
 		await websocket.close()
 
 		r = self.session.post (
@@ -195,6 +199,7 @@ class TransactionTracer:
 
 	def trace(self,req):
 	#
+		"""This is the main function for an App; it traces a transaction"""
 		r = None
 
 		for i in [1,2,3,4,5]:
@@ -226,13 +231,13 @@ class TransactionTracer:
 		# }
 
 		j	= json.loads(r.text.encode())
-		#result	= j["result"]
 
 		return j
 	#
 
 	async def run(self):
 	#
+		"""This function connects to coordinator through Websockets and acts on any incomming messages"""
 		if not self.session:
 			print("Login did not succeed")
 			return
@@ -304,9 +309,13 @@ class TransactionTracer:
 
 	async def handle_message_as_watchtower (self, msg):
 	#
+		"""This function simulates a watchtower; for testing"""
+
 		chainId		= msg["chainId"]
 		requestId	= msg["requestId"]
 		transactionHash	= msg["transactionHash"]
+
+		# Example result for testing only
 
 		result = json.dumps({
 			"Receipt": {

@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>witnesschain API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>witnesschain</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import ssl
+import sys
+import json
+import math
+import time
+import random
+import socket
+import select
+import asyncio
+import pathlib
+import requests
+import subprocess
+import websockets
+import websockets.client
+import subprocess
+import async_timeout
+from calendar import timegm
+
+from eth_account import Account
+from eth_account.messages import encode_defunct
+
+HOME            = os.path.expanduser(&#34;~&#34;)
+
+SERVER          = &#34;api.witnesschain.com&#34;
+SERVER_PORT     = &#34;443&#34;
+
+API_VERSION     = &#34;v1&#34;
+API             = &#34;/tracer/&#34; + API_VERSION + &#34;/&lt;role&gt;&#34;
+BASE_URL        = &#34;https://&#34; + SERVER + &#34;:&#34; + SERVER_PORT + API
+BASE_URL_WSS    = &#34;wss://&#34;   + SERVER + &#34;:&#34; + SERVER_PORT + API
+
+LOGIN_URL       = BASE_URL + &#34;/login&#34;
+LOGOUT_URL      = BASE_URL + &#34;/logout&#34;
+PRE_LOGIN_URL   = BASE_URL + &#34;/pre-login&#34;
+TRACE_URL       = BASE_URL + &#34;/trace&#34;
+USER_INFO_URL   = BASE_URL + &#34;/user-info&#34; 
+
+WEBSOCKET_URL   = BASE_URL_WSS + &#34;/websocket&#34;
+
+
+CONTENT_TYPE_JSON = {
+        &#34;content-type&#34; : &#34;application/json&#34;
+}
+
+SSL_CONTEXT = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+
+
+class TransactionTracer:
+#
+        &#34;&#34;&#34;This class is for tracing L2 transactions&#34;&#34;&#34;
+        def __init__(self, args):
+        #
+                self.session            = None  
+                self.websocket          = None
+
+                self.role               = args[&#34;role&#34;] 
+                self.privateKey         = args[&#34;privateKey&#34;]
+                self.account            = Account.from_key(self.privateKey)
+                self.publicKey          = self.account.address
+
+                self.keyType            = args[&#34;keyType&#34;]
+                self.currentlyWatching  = &#34;-&#34;
+
+                self.extra_headers      = &#34;NA&#34;
+
+                if self.role == &#34;watchtower&#34;:
+                        self.currentlyWatching = args[&#34;currentlyWatching&#34;]
+        #
+
+        def login (self):
+        #
+                &#34;&#34;&#34;This function logs in app/watchtower and returns a cookie from the coordinator&#34;&#34;&#34;
+                s = requests.Session()
+
+                data = json.dumps ({
+                        &#34;keyType&#34;               : self.keyType,
+                        &#34;publicKey&#34;             : self.publicKey,
+                        &#34;currentlyWatching&#34;     : self.currentlyWatching,
+                })
+
+                r = s.post (
+                        url     = PRE_LOGIN_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        data    = data,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                cookies = s.cookies.get_dict()
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+
+                j       = json.loads(r.text.encode())
+                message = j[&#34;result&#34;][&#34;message&#34;]
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+                data = json.dumps ({
+                        &#34;signature&#34; : self.sign(message) 
+                })
+
+
+                r = s.post (
+                        url     = LOGIN_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        data    = data,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+
+                r = s.post (
+                        url     = USER_INFO_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        data    = data,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+                self.session = s
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+                return True
+        #
+
+        def sign (self,message):
+        #
+                &#34;&#34;&#34;Sign a given message as a hex&#34;&#34;&#34;
+                message_hash = encode_defunct(text=message)
+
+                s = Account.sign_message(message_hash, self.privateKey)
+
+                return s.signature.hex()
+        #
+
+        def sign_as_json(self,message):
+        #
+                &#34;&#34;&#34;Sign a given message in a structured format (JSON)&#34;&#34;&#34;
+                message_hash = encode_defunct(text=message)
+
+                s = Account.sign_message(message_hash, self.privateKey)
+
+                return json.dumps ({
+                        &#34;role&#34;              : self.role,
+                        &#34;message&#34;           : message.decode(),
+                        &#34;keyType&#34;           : self.keyType,
+                        &#34;publicKey&#34;         : self.publicKey,
+                        &#34;signature&#34;         : s.signature.hex()
+                })
+        #
+
+        async def logout (self,websocket):
+        #
+                &#34;&#34;&#34;Logs out the user&#34;&#34;&#34;
+                await websocket.close()
+
+                r = self.session.post (
+                        url     = LOGOUT_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+                return True
+        #
+
+        def trace(self,req):
+        #
+                &#34;&#34;&#34;This is the main function for an App; it traces a transaction&#34;&#34;&#34;
+                r = None
+
+                for i in [1,2,3,4,5]:
+                # {
+                        if self.session:
+                                r = self.session.post (
+                                        url     = TRACE_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                                        data    = json.dumps(req),
+                                        headers = CONTENT_TYPE_JSON
+                                )
+                        else:
+                                r = requests.post (
+                                        url     = TRACE_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                                        data    = json.dumps(req),
+                                        headers = CONTENT_TYPE_JSON
+                                )
+
+
+                        if r.status_code == 200:
+                                print(&#34;===&gt; After&#34;,i,&#34;attempts\n&#34;)
+                                break
+                        elif r.status_code == 202:
+                                print(&#34;===&gt; Retry&#34;,i,&#34;\n&#34;)
+                                continue        
+                        else:
+                                print(&#34;\n===&gt;&#34;,r.status_code,r.url,r.text)
+                                self.session = None
+                                break
+                # }
+
+                j       = json.loads(r.text.encode())
+
+                return j
+        #
+
+        async def run(self):
+        #
+                &#34;&#34;&#34;This function connects to coordinator through Websockets and acts on any incomming messages&#34;&#34;&#34;
+                if not self.session:
+                        print(&#34;Login did not succeed&#34;)
+                        return
+
+                ws_link = WEBSOCKET_URL.replace(&#34;&lt;role&gt;&#34;,self.role)
+
+                print(&#34;===&gt; About to connect to ...&#34;, ws_link)
+
+                async def handle_websockets():
+                # {
+                        print(&#34;Connecting to &#34;,ws_link)
+                        async with websockets.connect (ws_link, extra_headers = self.extra_headers) as websocket:
+                        # {
+                                self.websocket = websocket
+
+                                print(&#34;===&gt; Connected to websocket&#34;)
+                                do_ping = True
+                                while True:
+                                #
+                                        if do_ping:
+                                        #
+                                                try:
+                                                        await websocket.send(&#34;ping&#34;)
+                                                except Exception as e:
+                                                        print(&#34;===&gt; EXCEPTION &#34;,e)
+                                                        break
+                                        #
+                                        msg= None
+
+                                        try:
+                                                async with async_timeout.timeout(30):
+                                                        msg = await websocket.recv()
+                                        except asyncio.exceptions.TimeoutError:
+                                                do_ping = True
+                                                print(&#34;===&gt; 30s Timeout&#34;)
+                                                continue
+
+                                        except asyncio.exceptions.CancelledError:
+                                                print(&#34;===&gt; EXCEPTION : Cancelled&#34;)
+                                                do_ping = True
+                                                continue
+                                        except Exception as e:
+                                                print(&#34;===&gt; EXCEPTION :&#34;,e)
+                                                break
+
+                                        if msg == &#34;ping&#34; or msg == &#34;pong&#34;:
+                                                do_ping = False
+                                                continue
+
+                                        try:
+                                                msg = json.loads(msg)
+                                        except:
+                                                print(&#34;===&gt; Message was not json&#34;,msg)
+                                                continue 
+                                        
+                                        if self.role == &#34;app&#34;:
+                                                await self.handle_message_as_app(msg)
+                                        elif self.role == &#34;watchtower&#34;:
+                                                await self.handle_message_as_watchtower(msg)
+                                        else: 
+                                                assert False
+
+                        # }
+                # }
+
+                print(&#34;===&gt; Handing ws...&#34;)
+                await handle_websockets()
+        #
+
+        async def handle_message_as_watchtower (self, msg):
+        #
+                &#34;&#34;&#34;This function simulates a watchtower; for testing&#34;&#34;&#34;
+
+                chainId         = msg[&#34;chainId&#34;]
+                requestId       = msg[&#34;requestId&#34;]
+                transactionHash = msg[&#34;transactionHash&#34;]
+
+                # Example result for testing only
+
+                result = json.dumps({
+                        &#34;Receipt&#34;: {
+                                &#34;type&#34;: &#34;0x7e&#34;,
+                                &#34;root&#34;: &#34;0x&#34;,
+                                &#34;status&#34;: &#34;0x1&#34;,
+                                &#34;cumulativeGasUsed&#34;: &#34;0xb729&#34;,
+                                &#34;logsBloom&#34;: &#34;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#34;,
+                                &#34;logs&#34;: [],
+                                &#34;transactionHash&#34;: transactionHash,
+                                &#34;contractAddress&#34;: &#34;0x0000000000000000000000000000000000000000&#34;,
+                                &#34;gasUsed&#34;: &#34;0xb729&#34;,
+                                &#34;effectiveGasPrice&#34;: &#34;0x0&#34;,
+                                &#34;depositNonce&#34;: &#34;0x7c216a&#34;,
+                                &#34;depositReceiptVersion&#34;: &#34;0x1&#34;,
+                                &#34;blockHash&#34;: &#34;0x477d8934cae2daa6b0d72c578dca214513f8837ddf6132ba10ec3ad94ff844ba&#34;,
+                                &#34;blockNumber&#34;: &#34;0x7c216b&#34;,
+                                &#34;transactionIndex&#34;: &#34;0x0&#34;
+                        },
+                })
+
+                await self.websocket.send (
+                        json.dumps ({
+                                &#34;api&#34;                   : &#34;trace-transaction&#34;,
+                                &#34;requestId&#34;             : requestId,
+                                &#34;chainId&#34;               : chainId,
+                                &#34;transactionHash&#34;       : transactionHash,
+                                &#34;result&#34;                : result,
+                                &#34;signature&#34;             : self.sign(result) 
+                        })
+                )
+
+                print(&#34;Sent response for =&gt; &#34;,transactionHash)
+
+                try:
+                        async with async_timeout.timeout(30):
+                                response = await self.websocket.recv()
+                except Exception as e:
+                        print(&#34;GOT some exception&#34;,e)
+
+        #
+#</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="witnesschain.TransactionTracer"><code class="flex name class">
+<span>class <span class="ident">TransactionTracer</span></span>
+<span>(</span><span>args)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class is for tracing L2 transactions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TransactionTracer:
+#
+        &#34;&#34;&#34;This class is for tracing L2 transactions&#34;&#34;&#34;
+        def __init__(self, args):
+        #
+                self.session            = None  
+                self.websocket          = None
+
+                self.role               = args[&#34;role&#34;] 
+                self.privateKey         = args[&#34;privateKey&#34;]
+                self.account            = Account.from_key(self.privateKey)
+                self.publicKey          = self.account.address
+
+                self.keyType            = args[&#34;keyType&#34;]
+                self.currentlyWatching  = &#34;-&#34;
+
+                self.extra_headers      = &#34;NA&#34;
+
+                if self.role == &#34;watchtower&#34;:
+                        self.currentlyWatching = args[&#34;currentlyWatching&#34;]
+        #
+
+        def login (self):
+        #
+                &#34;&#34;&#34;This function logs in app/watchtower and returns a cookie from the coordinator&#34;&#34;&#34;
+                s = requests.Session()
+
+                data = json.dumps ({
+                        &#34;keyType&#34;               : self.keyType,
+                        &#34;publicKey&#34;             : self.publicKey,
+                        &#34;currentlyWatching&#34;     : self.currentlyWatching,
+                })
+
+                r = s.post (
+                        url     = PRE_LOGIN_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        data    = data,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                cookies = s.cookies.get_dict()
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+
+                j       = json.loads(r.text.encode())
+                message = j[&#34;result&#34;][&#34;message&#34;]
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+                data = json.dumps ({
+                        &#34;signature&#34; : self.sign(message) 
+                })
+
+
+                r = s.post (
+                        url     = LOGIN_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        data    = data,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+
+                r = s.post (
+                        url     = USER_INFO_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        data    = data,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+                self.session = s
+
+                cookies = s.cookies.get_dict()
+                self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+                return True
+        #
+
+        def sign (self,message):
+        #
+                &#34;&#34;&#34;Sign a given message as a hex&#34;&#34;&#34;
+                message_hash = encode_defunct(text=message)
+
+                s = Account.sign_message(message_hash, self.privateKey)
+
+                return s.signature.hex()
+        #
+
+        def sign_as_json(self,message):
+        #
+                &#34;&#34;&#34;Sign a given message in a structured format (JSON)&#34;&#34;&#34;
+                message_hash = encode_defunct(text=message)
+
+                s = Account.sign_message(message_hash, self.privateKey)
+
+                return json.dumps ({
+                        &#34;role&#34;              : self.role,
+                        &#34;message&#34;           : message.decode(),
+                        &#34;keyType&#34;           : self.keyType,
+                        &#34;publicKey&#34;         : self.publicKey,
+                        &#34;signature&#34;         : s.signature.hex()
+                })
+        #
+
+        async def logout (self,websocket):
+        #
+                &#34;&#34;&#34;Logs out the user&#34;&#34;&#34;
+                await websocket.close()
+
+                r = self.session.post (
+                        url     = LOGOUT_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                        verify  = SSL_CONTEXT.check_hostname,
+                        headers = CONTENT_TYPE_JSON
+                )
+
+                if r.status_code == 200:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                        self.session= None
+                        return None
+
+                return True
+        #
+
+        def trace(self,req):
+        #
+                &#34;&#34;&#34;This is the main function for an App; it traces a transaction&#34;&#34;&#34;
+                r = None
+
+                for i in [1,2,3,4,5]:
+                # {
+                        if self.session:
+                                r = self.session.post (
+                                        url     = TRACE_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                                        data    = json.dumps(req),
+                                        headers = CONTENT_TYPE_JSON
+                                )
+                        else:
+                                r = requests.post (
+                                        url     = TRACE_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                                        data    = json.dumps(req),
+                                        headers = CONTENT_TYPE_JSON
+                                )
+
+
+                        if r.status_code == 200:
+                                print(&#34;===&gt; After&#34;,i,&#34;attempts\n&#34;)
+                                break
+                        elif r.status_code == 202:
+                                print(&#34;===&gt; Retry&#34;,i,&#34;\n&#34;)
+                                continue        
+                        else:
+                                print(&#34;\n===&gt;&#34;,r.status_code,r.url,r.text)
+                                self.session = None
+                                break
+                # }
+
+                j       = json.loads(r.text.encode())
+
+                return j
+        #
+
+        async def run(self):
+        #
+                &#34;&#34;&#34;This function connects to coordinator through Websockets and acts on any incomming messages&#34;&#34;&#34;
+                if not self.session:
+                        print(&#34;Login did not succeed&#34;)
+                        return
+
+                ws_link = WEBSOCKET_URL.replace(&#34;&lt;role&gt;&#34;,self.role)
+
+                print(&#34;===&gt; About to connect to ...&#34;, ws_link)
+
+                async def handle_websockets():
+                # {
+                        print(&#34;Connecting to &#34;,ws_link)
+                        async with websockets.connect (ws_link, extra_headers = self.extra_headers) as websocket:
+                        # {
+                                self.websocket = websocket
+
+                                print(&#34;===&gt; Connected to websocket&#34;)
+                                do_ping = True
+                                while True:
+                                #
+                                        if do_ping:
+                                        #
+                                                try:
+                                                        await websocket.send(&#34;ping&#34;)
+                                                except Exception as e:
+                                                        print(&#34;===&gt; EXCEPTION &#34;,e)
+                                                        break
+                                        #
+                                        msg= None
+
+                                        try:
+                                                async with async_timeout.timeout(30):
+                                                        msg = await websocket.recv()
+                                        except asyncio.exceptions.TimeoutError:
+                                                do_ping = True
+                                                print(&#34;===&gt; 30s Timeout&#34;)
+                                                continue
+
+                                        except asyncio.exceptions.CancelledError:
+                                                print(&#34;===&gt; EXCEPTION : Cancelled&#34;)
+                                                do_ping = True
+                                                continue
+                                        except Exception as e:
+                                                print(&#34;===&gt; EXCEPTION :&#34;,e)
+                                                break
+
+                                        if msg == &#34;ping&#34; or msg == &#34;pong&#34;:
+                                                do_ping = False
+                                                continue
+
+                                        try:
+                                                msg = json.loads(msg)
+                                        except:
+                                                print(&#34;===&gt; Message was not json&#34;,msg)
+                                                continue 
+                                        
+                                        if self.role == &#34;app&#34;:
+                                                await self.handle_message_as_app(msg)
+                                        elif self.role == &#34;watchtower&#34;:
+                                                await self.handle_message_as_watchtower(msg)
+                                        else: 
+                                                assert False
+
+                        # }
+                # }
+
+                print(&#34;===&gt; Handing ws...&#34;)
+                await handle_websockets()
+        #
+
+        async def handle_message_as_watchtower (self, msg):
+        #
+                &#34;&#34;&#34;This function simulates a watchtower; for testing&#34;&#34;&#34;
+
+                chainId         = msg[&#34;chainId&#34;]
+                requestId       = msg[&#34;requestId&#34;]
+                transactionHash = msg[&#34;transactionHash&#34;]
+
+                # Example result for testing only
+
+                result = json.dumps({
+                        &#34;Receipt&#34;: {
+                                &#34;type&#34;: &#34;0x7e&#34;,
+                                &#34;root&#34;: &#34;0x&#34;,
+                                &#34;status&#34;: &#34;0x1&#34;,
+                                &#34;cumulativeGasUsed&#34;: &#34;0xb729&#34;,
+                                &#34;logsBloom&#34;: &#34;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#34;,
+                                &#34;logs&#34;: [],
+                                &#34;transactionHash&#34;: transactionHash,
+                                &#34;contractAddress&#34;: &#34;0x0000000000000000000000000000000000000000&#34;,
+                                &#34;gasUsed&#34;: &#34;0xb729&#34;,
+                                &#34;effectiveGasPrice&#34;: &#34;0x0&#34;,
+                                &#34;depositNonce&#34;: &#34;0x7c216a&#34;,
+                                &#34;depositReceiptVersion&#34;: &#34;0x1&#34;,
+                                &#34;blockHash&#34;: &#34;0x477d8934cae2daa6b0d72c578dca214513f8837ddf6132ba10ec3ad94ff844ba&#34;,
+                                &#34;blockNumber&#34;: &#34;0x7c216b&#34;,
+                                &#34;transactionIndex&#34;: &#34;0x0&#34;
+                        },
+                })
+
+                await self.websocket.send (
+                        json.dumps ({
+                                &#34;api&#34;                   : &#34;trace-transaction&#34;,
+                                &#34;requestId&#34;             : requestId,
+                                &#34;chainId&#34;               : chainId,
+                                &#34;transactionHash&#34;       : transactionHash,
+                                &#34;result&#34;                : result,
+                                &#34;signature&#34;             : self.sign(result) 
+                        })
+                )
+
+                print(&#34;Sent response for =&gt; &#34;,transactionHash)
+
+                try:
+                        async with async_timeout.timeout(30):
+                                response = await self.websocket.recv()
+                except Exception as e:
+                        print(&#34;GOT some exception&#34;,e)
+
+        #</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="witnesschain.TransactionTracer.handle_message_as_watchtower"><code class="name flex">
+<span>async def <span class="ident">handle_message_as_watchtower</span></span>(<span>self, msg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function simulates a watchtower; for testing</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def handle_message_as_watchtower (self, msg):
+#
+        &#34;&#34;&#34;This function simulates a watchtower; for testing&#34;&#34;&#34;
+
+        chainId         = msg[&#34;chainId&#34;]
+        requestId       = msg[&#34;requestId&#34;]
+        transactionHash = msg[&#34;transactionHash&#34;]
+
+        # Example result for testing only
+
+        result = json.dumps({
+                &#34;Receipt&#34;: {
+                        &#34;type&#34;: &#34;0x7e&#34;,
+                        &#34;root&#34;: &#34;0x&#34;,
+                        &#34;status&#34;: &#34;0x1&#34;,
+                        &#34;cumulativeGasUsed&#34;: &#34;0xb729&#34;,
+                        &#34;logsBloom&#34;: &#34;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#34;,
+                        &#34;logs&#34;: [],
+                        &#34;transactionHash&#34;: transactionHash,
+                        &#34;contractAddress&#34;: &#34;0x0000000000000000000000000000000000000000&#34;,
+                        &#34;gasUsed&#34;: &#34;0xb729&#34;,
+                        &#34;effectiveGasPrice&#34;: &#34;0x0&#34;,
+                        &#34;depositNonce&#34;: &#34;0x7c216a&#34;,
+                        &#34;depositReceiptVersion&#34;: &#34;0x1&#34;,
+                        &#34;blockHash&#34;: &#34;0x477d8934cae2daa6b0d72c578dca214513f8837ddf6132ba10ec3ad94ff844ba&#34;,
+                        &#34;blockNumber&#34;: &#34;0x7c216b&#34;,
+                        &#34;transactionIndex&#34;: &#34;0x0&#34;
+                },
+        })
+
+        await self.websocket.send (
+                json.dumps ({
+                        &#34;api&#34;                   : &#34;trace-transaction&#34;,
+                        &#34;requestId&#34;             : requestId,
+                        &#34;chainId&#34;               : chainId,
+                        &#34;transactionHash&#34;       : transactionHash,
+                        &#34;result&#34;                : result,
+                        &#34;signature&#34;             : self.sign(result) 
+                })
+        )
+
+        print(&#34;Sent response for =&gt; &#34;,transactionHash)
+
+        try:
+                async with async_timeout.timeout(30):
+                        response = await self.websocket.recv()
+        except Exception as e:
+                print(&#34;GOT some exception&#34;,e)</code></pre>
+</details>
+</dd>
+<dt id="witnesschain.TransactionTracer.login"><code class="name flex">
+<span>def <span class="ident">login</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function logs in app/watchtower and returns a cookie from the coordinator</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def login (self):
+#
+        &#34;&#34;&#34;This function logs in app/watchtower and returns a cookie from the coordinator&#34;&#34;&#34;
+        s = requests.Session()
+
+        data = json.dumps ({
+                &#34;keyType&#34;               : self.keyType,
+                &#34;publicKey&#34;             : self.publicKey,
+                &#34;currentlyWatching&#34;     : self.currentlyWatching,
+        })
+
+        r = s.post (
+                url     = PRE_LOGIN_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                verify  = SSL_CONTEXT.check_hostname,
+                data    = data,
+                headers = CONTENT_TYPE_JSON
+        )
+
+        cookies = s.cookies.get_dict()
+
+        if r.status_code == 200:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+        else:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                self.session= None
+                return None
+
+
+        j       = json.loads(r.text.encode())
+        message = j[&#34;result&#34;][&#34;message&#34;]
+
+        cookies = s.cookies.get_dict()
+        self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+        data = json.dumps ({
+                &#34;signature&#34; : self.sign(message) 
+        })
+
+
+        r = s.post (
+                url     = LOGIN_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                verify  = SSL_CONTEXT.check_hostname,
+                data    = data,
+                headers = CONTENT_TYPE_JSON
+        )
+
+        if r.status_code == 200:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+        else:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                self.session= None
+                return None
+
+        cookies = s.cookies.get_dict()
+        self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+
+        r = s.post (
+                url     = USER_INFO_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                verify  = SSL_CONTEXT.check_hostname,
+                data    = data,
+                headers = CONTENT_TYPE_JSON
+        )
+
+        cookies = s.cookies.get_dict()
+        self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+        if r.status_code == 200:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+        else:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                self.session= None
+                return None
+
+        self.session = s
+
+        cookies = s.cookies.get_dict()
+        self.extra_headers = {&#34;cookie&#34; : &#34;;&#34;.join([&#34;%s=%s&#34; %(i, j) for i, j in cookies.items()]) }
+
+        return True</code></pre>
+</details>
+</dd>
+<dt id="witnesschain.TransactionTracer.logout"><code class="name flex">
+<span>async def <span class="ident">logout</span></span>(<span>self, websocket)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Logs out the user</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def logout (self,websocket):
+#
+        &#34;&#34;&#34;Logs out the user&#34;&#34;&#34;
+        await websocket.close()
+
+        r = self.session.post (
+                url     = LOGOUT_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                verify  = SSL_CONTEXT.check_hostname,
+                headers = CONTENT_TYPE_JSON
+        )
+
+        if r.status_code == 200:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url)
+        else:
+                print(&#34;\n===&gt;&#34;,r.status_code,r.url,&#34;\n&#34;,r.text)
+                self.session= None
+                return None
+
+        return True</code></pre>
+</details>
+</dd>
+<dt id="witnesschain.TransactionTracer.run"><code class="name flex">
+<span>async def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function connects to coordinator through Websockets and acts on any incomming messages</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def run(self):
+#
+        &#34;&#34;&#34;This function connects to coordinator through Websockets and acts on any incomming messages&#34;&#34;&#34;
+        if not self.session:
+                print(&#34;Login did not succeed&#34;)
+                return
+
+        ws_link = WEBSOCKET_URL.replace(&#34;&lt;role&gt;&#34;,self.role)
+
+        print(&#34;===&gt; About to connect to ...&#34;, ws_link)
+
+        async def handle_websockets():
+        # {
+                print(&#34;Connecting to &#34;,ws_link)
+                async with websockets.connect (ws_link, extra_headers = self.extra_headers) as websocket:
+                # {
+                        self.websocket = websocket
+
+                        print(&#34;===&gt; Connected to websocket&#34;)
+                        do_ping = True
+                        while True:
+                        #
+                                if do_ping:
+                                #
+                                        try:
+                                                await websocket.send(&#34;ping&#34;)
+                                        except Exception as e:
+                                                print(&#34;===&gt; EXCEPTION &#34;,e)
+                                                break
+                                #
+                                msg= None
+
+                                try:
+                                        async with async_timeout.timeout(30):
+                                                msg = await websocket.recv()
+                                except asyncio.exceptions.TimeoutError:
+                                        do_ping = True
+                                        print(&#34;===&gt; 30s Timeout&#34;)
+                                        continue
+
+                                except asyncio.exceptions.CancelledError:
+                                        print(&#34;===&gt; EXCEPTION : Cancelled&#34;)
+                                        do_ping = True
+                                        continue
+                                except Exception as e:
+                                        print(&#34;===&gt; EXCEPTION :&#34;,e)
+                                        break
+
+                                if msg == &#34;ping&#34; or msg == &#34;pong&#34;:
+                                        do_ping = False
+                                        continue
+
+                                try:
+                                        msg = json.loads(msg)
+                                except:
+                                        print(&#34;===&gt; Message was not json&#34;,msg)
+                                        continue 
+                                
+                                if self.role == &#34;app&#34;:
+                                        await self.handle_message_as_app(msg)
+                                elif self.role == &#34;watchtower&#34;:
+                                        await self.handle_message_as_watchtower(msg)
+                                else: 
+                                        assert False
+
+                # }
+        # }
+
+        print(&#34;===&gt; Handing ws...&#34;)
+        await handle_websockets()</code></pre>
+</details>
+</dd>
+<dt id="witnesschain.TransactionTracer.sign"><code class="name flex">
+<span>def <span class="ident">sign</span></span>(<span>self, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sign a given message as a hex</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sign (self,message):
+#
+        &#34;&#34;&#34;Sign a given message as a hex&#34;&#34;&#34;
+        message_hash = encode_defunct(text=message)
+
+        s = Account.sign_message(message_hash, self.privateKey)
+
+        return s.signature.hex()
+#</code></pre>
+</details>
+</dd>
+<dt id="witnesschain.TransactionTracer.sign_as_json"><code class="name flex">
+<span>def <span class="ident">sign_as_json</span></span>(<span>self, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sign a given message in a structured format (JSON)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sign_as_json(self,message):
+#
+        &#34;&#34;&#34;Sign a given message in a structured format (JSON)&#34;&#34;&#34;
+        message_hash = encode_defunct(text=message)
+
+        s = Account.sign_message(message_hash, self.privateKey)
+
+        return json.dumps ({
+                &#34;role&#34;              : self.role,
+                &#34;message&#34;           : message.decode(),
+                &#34;keyType&#34;           : self.keyType,
+                &#34;publicKey&#34;         : self.publicKey,
+                &#34;signature&#34;         : s.signature.hex()
+        })
+#</code></pre>
+</details>
+</dd>
+<dt id="witnesschain.TransactionTracer.trace"><code class="name flex">
+<span>def <span class="ident">trace</span></span>(<span>self, req)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This is the main function for an App; it traces a transaction</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def trace(self,req):
+#
+        &#34;&#34;&#34;This is the main function for an App; it traces a transaction&#34;&#34;&#34;
+        r = None
+
+        for i in [1,2,3,4,5]:
+        # {
+                if self.session:
+                        r = self.session.post (
+                                url     = TRACE_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                                data    = json.dumps(req),
+                                headers = CONTENT_TYPE_JSON
+                        )
+                else:
+                        r = requests.post (
+                                url     = TRACE_URL.replace(&#34;&lt;role&gt;&#34;,self.role),
+                                data    = json.dumps(req),
+                                headers = CONTENT_TYPE_JSON
+                        )
+
+
+                if r.status_code == 200:
+                        print(&#34;===&gt; After&#34;,i,&#34;attempts\n&#34;)
+                        break
+                elif r.status_code == 202:
+                        print(&#34;===&gt; Retry&#34;,i,&#34;\n&#34;)
+                        continue        
+                else:
+                        print(&#34;\n===&gt;&#34;,r.status_code,r.url,r.text)
+                        self.session = None
+                        break
+        # }
+
+        j       = json.loads(r.text.encode())
+
+        return j</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="witnesschain.TransactionTracer" href="#witnesschain.TransactionTracer">TransactionTracer</a></code></h4>
+<ul class="">
+<li><code><a title="witnesschain.TransactionTracer.handle_message_as_watchtower" href="#witnesschain.TransactionTracer.handle_message_as_watchtower">handle_message_as_watchtower</a></code></li>
+<li><code><a title="witnesschain.TransactionTracer.login" href="#witnesschain.TransactionTracer.login">login</a></code></li>
+<li><code><a title="witnesschain.TransactionTracer.logout" href="#witnesschain.TransactionTracer.logout">logout</a></code></li>
+<li><code><a title="witnesschain.TransactionTracer.run" href="#witnesschain.TransactionTracer.run">run</a></code></li>
+<li><code><a title="witnesschain.TransactionTracer.sign" href="#witnesschain.TransactionTracer.sign">sign</a></code></li>
+<li><code><a title="witnesschain.TransactionTracer.sign_as_json" href="#witnesschain.TransactionTracer.sign_as_json">sign_as_json</a></code></li>
+<li><code><a title="witnesschain.TransactionTracer.trace" href="#witnesschain.TransactionTracer.trace">trace</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
