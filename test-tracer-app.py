@@ -1,3 +1,4 @@
+import sys
 import random
 
 import witnesschain
@@ -10,22 +11,23 @@ t = witnesschain.TransactionTracer ({
 
 t.login()
 
-for i in range(0,1000):
-#
-	transactionHash = "0x"
+if t.session == None:
+	print("Login did not succeed")
+	sys.exit(-1)	
 
-	for x in range (0,65):
-		d = random.randint(0,16) 
-		transactionHash += "01234567890abcdef"[d]
+transactionHash = "0x"
 
-	if t.session == None:
-		break
+for x in range (0,65):
+	d = random.randint(0,16) 
+	transactionHash += "01234567890abcdef"[d]
 
-	print("\nTracing ... [",i,"]",transactionHash)
 
-	r = t.trace ({
-		"requestId"		: "EEEE",
-		"chainId"		: "84532",
-		"transactionHash"	: transactionHash,
-	})
-#
+print("\nTracing ... ",transactionHash)
+
+r = t.trace ({
+	"requestId"		: "EEEE",
+	"chainId"		: "84532",
+	"transactionHash"	: transactionHash,
+})
+
+print(r)
