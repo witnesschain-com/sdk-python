@@ -307,6 +307,11 @@ class TransactionTracer:
 		await handle_websockets()
 	#
 
+	async def handle_message_as_app (self, msg):
+	#
+		pass
+	#
+
 	async def handle_message_as_watchtower (self, msg):
 	#
 		"""This function simulates a watchtower; for testing"""

@@ -1,6 +1,9 @@
 import sys
 import random
 
+# Please refer to API documentation here:
+# https://redocly.github.io/redoc/?url=https://api.witnesschain.com/static/transaction-tracer.json
+
 import witnesschain
 
 t = witnesschain.TransactionTracer ({
