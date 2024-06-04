@@ -22,8 +22,8 @@ and `test-tracer-watchtower.py` to test/simulate a watchtower.
 import witnesschain
 
 t = witnesschain.TransactionTracer ({
-	"role"		    : "app",
-	"keyType"	    : "ethereum",
+	"role"		: "app",
+	"keyType"	: "ethereum",
 	"privateKey"	: "ed9f0b916c7017e4d51edac23c79f5c3cc08107993cce093761e8c52f67e861f"
 })
 
@@ -32,8 +32,8 @@ t.login()
 transactionHash = "0x...."
 
 r = t.trace ({
-		"requestId"		    : "myReqId",
-		"chainId"		      : "84532",
+		"requestId"		: "myReqId",
+		"chainId"		: "84532",
 		"transactionHash"	: transactionHash
 })
 ```
